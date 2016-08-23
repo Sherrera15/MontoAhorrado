@@ -75,7 +75,7 @@ public class MontoAhorrado extends javax.swing.JFrame {
         });
         getContentPane().add(txtSaldoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 90, -1));
 
-        cmbCalcular.setFont(new java.awt.Font("JasmineUPC", 2, 24)); // NOI18N
+        cmbCalcular.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         cmbCalcular.setText("CALCULAR");
         cmbCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,14 +84,14 @@ public class MontoAhorrado extends javax.swing.JFrame {
         });
         getContentPane().add(cmbCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 130, 40));
 
-        cmbBorrar.setFont(new java.awt.Font("JasmineUPC", 2, 24)); // NOI18N
+        cmbBorrar.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         cmbBorrar.setText("BORRAR");
         cmbBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbBorrarActionPerformed(evt);
             }
         });
-        getContentPane().add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 110, 50));
+        getContentPane().add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 130, 50));
 
         jLabel4.setFont(new java.awt.Font("JasmineUPC", 2, 24)); // NOI18N
         jLabel4.setText("Resultado Del Monto");
@@ -116,8 +116,8 @@ public class MontoAhorrado extends javax.swing.JFrame {
 
     private void cmbCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCalcularActionPerformed
         // TODO add your handling code here:
-        String  n1, n2, sf, sf1;
-        double Mont = 0,Salari=0,resultado = 0,MontoA, SaF;
+        String  n1, num2, sf, sf1, inte;
+        double Mont = 0,Salari=0,resultado = 0,MontoA, SaF,in;
         
         
         
@@ -136,8 +136,12 @@ public class MontoAhorrado extends javax.swing.JFrame {
         Salari =Double.parseDouble(txtSaldoInicial.getText());
         
         }
+        
+        in =(Mont*1.15)/100;
+        inte= String.valueOf(in);
+        txtResultadoDelMonto.setText(inte);
        
-        MontoA= Mont + 0.015;
+        MontoA= Mont + in;
         sf= String.valueOf(MontoA);
         txtResultadoDelMonto.setText(sf);
         
